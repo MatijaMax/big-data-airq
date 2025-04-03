@@ -22,6 +22,8 @@ if __name__ == '__main__':
 # ENTITIES
 ##### HISTORIC DATA #####
 
+#/home/matija/Desktop/airq/data/pollution_us_2000_2016.csv
+
 # This dataset deals with pollution in the U.S. Pollution in the U.S. has been well documented by the U.S. EPA.
 
 # Includes four major pollutants (Nitrogen Dioxide, Sulphur Dioxide, Carbon Monoxide and Ozone).

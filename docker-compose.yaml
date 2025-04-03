@@ -63,7 +63,6 @@ services:
       - "8443:8443"
     volumes:
       - ./data/:/tmp/data/
-      - ./driver/:/tmp/driver/
       - ./nifi/hadoop/core-site.xml:/home/nifi/core-site.xml
       - nifi_conf:/opt/nifi/nifi-current/conf
       - nifi_database_repository:/opt/nifi/nifi-current/database_repository
@@ -83,6 +82,49 @@ services:
       - "18080:18080"
     volumes:
       - nifi_registry:/opt/nifi-registry/nifi-registry-current/
+    networks:
+      - airq_network
+
+  spark-master:
+    image: bde2020/spark-master:3.0.1-hadoop3.2
+    container_name: spark-master
+    ports:
+      - 8080:8080
+      - 7077:7077
+    environment: 
+      - PYSPARK_PYTHON=python3
+    env_file:
+      - ./spark/spark.env
+    volumes: 
+      - ./spark/scripts:/home/scripts
+    networks:
+      - airq_network
+
+  spark-worker1:
+    image: bde2020/spark-worker:3.0.1-hadoop3.2
+    container_name: spark-worker1
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+    ports:
+      - 8081:8081
+    env_file:
+      - ./spark/spark.env
+    networks:
+      - airq_network
+  
+  spark-worker2:
+    image: bde2020/spark-worker:3.0.1-hadoop3.2
+    container_name: spark-worker2
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+    ports:
+      - 8082:8081
+    env_file:
+      - ./spark/spark.env
     networks:
       - airq_network
 

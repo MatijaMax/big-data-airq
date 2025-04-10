@@ -11,14 +11,26 @@
 </div>
 <br>
 
+
+
+## About the Project
 This application is a **project** for Big Data... "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+- **Python**: The programming language used to develop the application.
 
 ## Technologies
 
 - **Python**: The programming language used to develop the application.
 
-## How the Project Works
+## System Architecture
+
+## Queries
 
 1. **Test**: test
+
+## How to Run
+
+1. **Test**: test
+
+
 
 

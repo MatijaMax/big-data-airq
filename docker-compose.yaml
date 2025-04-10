@@ -155,6 +155,7 @@ services:
       - airq_network
 
 volumes:
+  mongodb_data: {}
   hadoop_namenode: {}
   hadoop_datanode1: {}
   hadoop_datanode2: {}

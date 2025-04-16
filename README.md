@@ -11,7 +11,7 @@
 
   <img src="https://gitlab.com/uploads/-/system/project/avatar/61199454/apache-airflow.png" alt="airflow" width="45" height="45"> 
 
-  <img src="https://blog.mayadata.io/hs-fs/hubfs/123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png?width=300&name=123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png" alt="kafka" width="25" height="25">  
+  <img src="https://blog.mayadata.io/hs-fs/hubfs/123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png?width=300&name=123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png" alt="kafka" width="35" height="35">  
 
   <img src="https://images.icon-icons.com/2699/PNG/512/apache_nifi_logo_icon_167863.png" alt="nifi" width="70" height="40">
 

@@ -25,7 +25,26 @@ This application is a **project** for Big Data... "Lorem ipsum dolor sit amet, c
 
 ## Queries
 
-1. **Test**: test
+**BATCH:**
+
+1. Get the number of unique monitoring locations by state.
+2. //TODO
+3. //TODO
+4. //TODO
+5. //TODO
+6. //TODO
+7. //TODO
+8. //TODO
+9. //TODO
+10. //TODO
+
+**STREAM:**
+
+1. //TODO
+2. //TODO
+3. //TODO
+4. //TODO
+5. //TODO
 
 ## How to Run
 

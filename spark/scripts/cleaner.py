@@ -75,5 +75,5 @@ for col_name in pollutant_columns:
 # Save cleaned data
 df_cleaned.write.mode("overwrite").parquet(TRANSFORMATION_DATA_PATH)
 
-# Stop stop
+# Stop 
 spark.stop()

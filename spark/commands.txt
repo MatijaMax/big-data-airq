@@ -1,0 +1,22 @@
+#####
+
+# Needed venv for IntelliSense
+
+# 1. Create virtual environment
+python -m venv venv
+
+# 2. Activate the virtual environment
+source venv/bin/activate
+
+# 3. Deactivate the virtual environment
+deactivate
+
+#####
+
+# docker exec -it spark-master bash
+
+# 1. Cleaner
+# /spark/bin/spark-submit /home/scripts/cleaner.py
+
+# 2. Other
+# /spark/bin/spark-submit --master spark://spark-master:7077 --packages org.mongodb.spark:mongo-spark-connector_2.12:10.2.0 /home/scripts/b1.py

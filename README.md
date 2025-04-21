@@ -14,7 +14,7 @@
   <img src="https://blog.mayadata.io/hs-fs/hubfs/123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png?width=300&name=123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png" alt="kafka" width="35" height="35">  
 
   <img src="https://images.icon-icons.com/2699/PNG/512/apache_nifi_logo_icon_167863.png" alt="nifi" width="70" height="40">
-  <img src="https://static-00.iconduck.com/assets.00/metabase-icon-1619x2048-qd3c9qpo.png" alt="metabase" width="40" height="40" style="margin-right: 8px;">   
+  <img src="https://static-00.iconduck.com/assets.00/metabase-icon-1619x2048-qd3c9qpo.png" alt="metabase" width="40" height="40" style="margin-right: 10px;">   
 
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png" alt="spark" width="70" height="40">   
 

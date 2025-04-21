@@ -14,21 +14,55 @@
   <img src="https://blog.mayadata.io/hs-fs/hubfs/123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png?width=300&name=123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png" alt="kafka" width="35" height="35">  
 
   <img src="https://images.icon-icons.com/2699/PNG/512/apache_nifi_logo_icon_167863.png" alt="nifi" width="70" height="40">
+  <img src="https://static-00.iconduck.com/assets.00/metabase-icon-1619x2048-qd3c9qpo.png" alt="metabase" width="40" height="40" style="margin-right: 8px;">   
 
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png" alt="spark" width="70" height="40">   
 
 </div>
 <br>
 
-
-
 ## About the Project
-This application is a **project** for Big Data... "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-- **Python**: The programming language used to develop the application.
+
+**Course:** Architectures and Systems for Big Data  
+**Student:** Matija Maksimović  
+**Project Title:** Air Quality Analysis  
+
+The goal of this project is to analyze air quality data using two processing modes:
+- **Batch Processing:** Historical air quality data from USA is used. (A total of **10 queries** are performed)
+  [USA Air Pollution Dataset](https://www.kaggle.com/datasets/mexwell/us-air-pollution)
+- **Streaming Processing:**  Real-time sensor data from USA is used. (A total of **5 queries** are performed)
+  [AirVisual API](https://api-docs.iqair.com/#get-started)
+
+## Cleaned Data Structure
+
+### Batch Data:
+
+- **Pollutants:** `NO2`, `O3`, `SO2`, `CO`  
+  Each pollutant has the following columns:
+  - `Units`, `Max`, `Min`, `Mean`, `AQI`
+
+- **Location and Time Fields:**
+  - `State`, `County`, `City`, `Monitoring Site`
+  - `Date`
+
+### Streaming Data:
+
+- **TODO:**
+  - `1`
+  - `2`
+
+
 
 ## Technologies
 
-- **Python**: The programming language used to develop the application.
+- **Docker**: Containerization platform used for deploying and running the application.  
+- **MongoDB**: NoSQL database used for storing transformed data.  
+- **Python**: The programming language used to develop the application.  
+- **HDFS**: Hadoop Distributed File System for scalable and reliable data storage.  
+- **Apache Airflow**: Workflow orchestration tool used for data pipelines.  
+- **Apache Kafka**: Distributed streaming platform used for real-time data.  
+- **Apache NiFi**: Data integration tool used for automating data flow between systems.  
+- **Apache Spark**: Unified analytics engine for large-scale data processing.
 
 ## System Architecture
 

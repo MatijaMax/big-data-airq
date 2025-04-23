@@ -52,8 +52,6 @@ The goal of this project is to analyze air quality data using two processing mod
   - `1`
   - `2`
 
-
-
 ## Technologies
 
 - **Docker**: Containerization platform used for deploying and running the application.  
@@ -64,6 +62,7 @@ The goal of this project is to analyze air quality data using two processing mod
 - **Apache Kafka**: Distributed streaming platform used for real-time data.  
 - **Apache NiFi**: Data integration tool used for automating data flow between systems.  
 - **Apache Spark**: Unified analytics engine for large-scale data processing.
+- **Metabase**: Open-source business intelligence tool used for visualizing and analyzing data.
 
 ## System Architecture
 
@@ -72,8 +71,8 @@ The goal of this project is to analyze air quality data using two processing mod
 **BATCH:**
 
 1. Get the number of unique monitoring locations by state.
-2. //TODO
-3. //TODO
+2. Get the global NO2 mean value.
+3. List the top 5 cities with the highest AQI for O3.
 4. //TODO
 5. //TODO
 6. //TODO
@@ -89,10 +88,6 @@ The goal of this project is to analyze air quality data using two processing mod
 3. //TODO
 4. //TODO
 5. //TODO
-
-## How to Run
-
-1. **Test**: test
 
 
 

@@ -38,9 +38,9 @@ The goal of this project is to analyze air quality data using two processing mod
 
 ### Batch Data:
 
-- **Pollutants:** `NO2`, `O3`, `SO2`, `CO`  
+- **Pollutants:** `NO2 [ppb]`, `O3 [ppm]`, `SO2 [ppb]`, `CO [ppm]`  
   Each pollutant has the following columns:
-  - `Units`, `Max`, `Min`, `Mean`, `AQI`
+  - `Max`, `Min`, `Mean`, `AQI`
 
 - **Location and Time Fields:**
   - `State`, `County`, `City`, `Monitoring Site`

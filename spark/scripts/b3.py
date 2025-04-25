@@ -26,6 +26,7 @@ df = spark.read.parquet(TRANSFORMATION_DATA_PATH)\
 
 # Filtering
 df_filtered = df.select("city", "site_num", "date", "O3_AQI")
+df_filtered = df_filtered.filter(col("city") != "Not in a city")
 
 # We need only one site/date combination per local avg 
 df_unique = df_filtered.dropDuplicates(["site_num", "date"])
@@ -35,7 +36,7 @@ local_avgs = df_unique.groupBy("site_num", "city").agg(avg("O3_AQI").alias("loca
 
 # 5 cities with the highest AQI levels
 result = local_avgs.groupBy("city").agg(avg("local_avg").alias("O3_AQI")).limit(5) \
-    .orderBy(col("city_O3_AQI").desc()) \
+    .orderBy(col("O3_AQI").desc()) \
     .limit(5)
 
 # Show result

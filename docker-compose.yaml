@@ -146,13 +146,24 @@ services:
       - mongodb
     ports:
       - "8083:8081"
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_PORT=27017
-      - ME_CONFIG_BASICAUTH_USERNAME=test
-      - ME_CONFIG_BASICAUTH_PASSWORD=test
+    env_file:
+      - ./mongo/mongo.env    
     networks:
       - airq_network
+
+  metabase:
+    image: metabase/metabase:v0.53.x
+    container_name: metabase
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./metabase/mb_data:/metabase-data
+    env_file:
+      - ./metabase/metabase.env
+    networks:
+      - airq_network     
 
 volumes:
   mongodb_data: {}

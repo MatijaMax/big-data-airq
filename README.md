@@ -40,7 +40,7 @@ The goal of this project is to analyze air quality data using two processing mod
 
 - **Pollutants:** `NO2 [ppb]`, `O3 [ppm]`, `SO2 [ppb]`, `CO [ppm]`  
   Each pollutant has the following columns:
-  - `Max`, `Min`, `Mean`, `AQI`
+  - `Max Value (Day)`, `Max Hour (Day)`, `Mean`, `AQI`
 
 - **Location and Time Fields:**
   - `State`, `County`, `City`, `Monitoring Site`
@@ -73,10 +73,10 @@ The goal of this project is to analyze air quality data using two processing mod
 1. Get the number of unique monitoring locations by state.
 2. Get the global NO2 mean value.
 3. List the top 5 cities with the highest AQI for O3.
-4. //TODO
-5. //TODO
-6. //TODO
-7. //TODO
+4. What is the average AQI for pollutants (NO2, O3, SO2, CO) in each state?
+5. Identify cities with highest combined AQI in winter.
+6. Show how highest measured daily pollutant values changed over time.
+7. Find the most common hour where the maximum measured values occurred in each county.
 8. //TODO
 9. //TODO
 10. //TODO

@@ -1,6 +1,7 @@
 import os
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import avg, year, month
+from pyspark.sql.window import Window
+from pyspark.sql.functions import col, count, desc, row_number
 
 # Mongo init
 MONGO_URI = os.environ['MONGO_URI']
@@ -24,17 +25,32 @@ TRANSFORMATION_DATA_PATH = HDFS_NAMENODE + "/clean/"
 # Read data
 df = spark.read.parquet(TRANSFORMATION_DATA_PATH)\
 
-df = df.withColumn("year", year("date")) \
-    .withColumn("month", month("date"))
+# Group by county and see how often each hour occurs
+df_no2 = df.groupBy("county", "NO2_hour_max").agg(count("*").alias("max_hour_count_no2"))
+df_o3 = df.groupBy("county", "O3_hour_max").agg(count("*").alias("max_hour_count_o3"))
+df_so2 = df.groupBy("county", "SO2_hour_max").agg(count("*").alias("max_hour_count_so2"))
+df_co = df.groupBy("county", "CO_hour_max").agg(count("*").alias("max_hour_count_co"))
 
-df_daily_max = df.select("year", "month", "date", "NO2_day_max", "O3_day_max", "SO2_day_max", "CO_day_max") 
 
-result = df_daily_max.groupBy("year", "month").agg(
-    avg("NO2_day_max").alias("NO2_day_max"),
-    avg("O3_day_max").alias("O3_day_max"),
-    avg("SO2_day_max").alias("SO2_day_max"),
-    avg("CO_day_max").alias("CO_day_max")
-).orderBy("year", "month")
+# Find the hour with the highest number per county
+window_no2 = Window.partitionBy("county").orderBy(desc("max_hour_count_no2"))
+most_common_no2 = df_no2.withColumn("rn", row_number().over(window_no2)).filter(col("rn") == 1).drop("rn")
+
+window_o3 = Window.partitionBy("county").orderBy(desc("max_hour_count_o3"))
+most_common_o3 = df_o3.withColumn("rn", row_number().over(window_o3)).filter(col("rn") == 1).drop("rn")
+
+window_so2 = Window.partitionBy("county").orderBy(desc("max_hour_count_so2"))
+most_common_so2 = df_so2.withColumn("rn", row_number().over(window_so2)).filter(col("rn") == 1).drop("rn")
+
+window_co = Window.partitionBy("county").orderBy(desc("max_hour_count_co"))
+most_common_co = df_co.withColumn("rn", row_number().over(window_co)).filter(col("rn") == 1).drop("rn")
+
+
+# Join all
+result = most_common_no2 \
+    .join(most_common_o3, on="county", how="outer") \
+    .join(most_common_so2, on="county", how="outer") \
+    .join(most_common_co, on="county", how="outer")
 
 # Show result
 result.show()

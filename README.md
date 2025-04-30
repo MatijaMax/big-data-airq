@@ -89,6 +89,14 @@ The goal of this project is to analyze air quality data using two processing mod
 4. //TODO
 5. //TODO
 
+## 📝 BONUS: A Paper on CRDTs
+For a detailed exploration of Conflict-Free Replicated Data Types (CRDTs), refer to the seminar paper inside this repository. This paper discusses the theoretical foundations and practical applications of CRDTs, highlighting their significance in distributed systems, ensuring consistency without the need for synchronization.
+
+You can find the paper in the following directory:  
+`seminar-paper/CRDT.pdf`.
+
+**Disclaimer**: The paper is written in Serbian.
+
 
 
 

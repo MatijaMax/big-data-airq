@@ -40,7 +40,7 @@ The goal of this project is to analyze air quality data using two processing mod
 
 - **Pollutants:** `NO2 [ppb]`, `O3 [ppm]`, `SO2 [ppb]`, `CO [ppm]`  
   Each pollutant has the following columns:
-  - `Max Value (Day)`, `Max Hour (Day)`, `Mean`, `AQI`
+  - `Max Value (In a day)`, `Max Hour (The hour when max value was measured)`, `Mean`, `AQI`
 
 - **Location and Time Fields:**
   - `State`, `County`, `City`, `Monitoring Site`
@@ -77,9 +77,9 @@ The goal of this project is to analyze air quality data using two processing mod
 5. Identify cities with highest combined AQI in winter.
 6. Show how highest measured daily pollutant values changed over time.
 7. Find the most common hour where the maximum measured values occurred in each county.
-8. //TODO
-9. //TODO
-10. //TODO
+8. Rank cities based on the standard variation of measured daily AQI values using a sliding window.
+9. Ranking countries based on the linear regression trend for NO2 AQI.
+10. Identifying seasonal patterns in monthly pollutant concentrations.
 
 **STREAM:**
 
@@ -95,7 +95,7 @@ For a detailed exploration of Conflict-Free Replicated Data Types (CRDTs), refer
 You can find the paper in the following directory:  
 `seminar-paper/CRDT.pdf`.
 
-**Disclaimer**: The paper is written in Serbian.
+**Disclaimer**: The paper is written in Serbian 🇷🇸
 
 
 

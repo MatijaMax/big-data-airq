@@ -86,7 +86,9 @@ services:
       - airq_network
 
   spark-master:
-    image: bde2020/spark-master:3.0.1-hadoop3.2
+    build:        
+      dockerfile: spark/docker/master/Dockerfile  
+    #image: sm
     container_name: spark-master
     ports:
       - 8080:8080
@@ -99,23 +101,27 @@ services:
       - ./spark/scripts:/home/scripts
     networks:
       - airq_network
-
+      
   spark-worker1:
-    image: bde2020/spark-worker:3.0.1-hadoop3.2
+    build:       
+      dockerfile: spark/docker/worker/Dockerfile
+    #image: sw1
     container_name: spark-worker1
     depends_on:
       - spark-master
     environment:
-      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_MASTER=spark://spark-master:7077    
     ports:
       - 8081:8081
     env_file:
-      - ./spark/spark.env
+      - ./spark/spark.env      
     networks:
       - airq_network
   
   spark-worker2:
-    image: bde2020/spark-worker:3.0.1-hadoop3.2
+    build:         
+      dockerfile: spark/docker/worker/Dockerfile
+    #image: sw2
     container_name: spark-worker2
     depends_on:
       - spark-master
@@ -124,7 +130,7 @@ services:
     ports:
       - 8082:8081
     env_file:
-      - ./spark/spark.env
+      - ./spark/spark.env   
     networks:
       - airq_network
 

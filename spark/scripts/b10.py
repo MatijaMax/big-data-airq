@@ -7,7 +7,6 @@ from pyspark.sql.functions import month, year, when, col, avg, row_number, desc
 MONGO_URI = os.environ['MONGO_URI']
 MONGO_DATABASE = "airq"
 MONGO_COLLECTION = "b10"
-MONGO_CONNECTION_URI = f"{MONGO_URI}/{MONGO_DATABASE}"
 
 # Spark init
 spark = SparkSession.builder \

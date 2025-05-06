@@ -20,3 +20,7 @@ deactivate
 
 # 2. Other
 # /spark/bin/spark-submit --master spark://spark-master:7077 --packages org.mongodb.spark:mongo-spark-connector_2.12:10.2.0 /home/scripts/b1.py
+
+#####
+
+docker-compose build --no-cache --pull

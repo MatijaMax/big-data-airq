@@ -5,7 +5,6 @@ from pyspark.sql import SparkSession
 MONGO_URI = os.environ['MONGO_URI']
 MONGO_DATABASE = "airq"
 MONGO_COLLECTION = "b1"
-MONGO_CONNECTION_URI = f"{MONGO_URI}/{MONGO_DATABASE}"
 
 # Spark init
 spark = SparkSession.builder \

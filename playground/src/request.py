@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 
 
 def test_api():
-
   load_dotenv()
   API_KEY = os.getenv('API_KEY')
-  URL = f"http://api.airvisual.com/v2/city?city=Los%20Angeles&state=California&country=USA&key={API_KEY}"
+  URL = f"http://api.airvisual.com/v2/city?city=Sandy&state=Utah&country=USA&key={API_KEY}"
+  #URL = f"http://api.airvisual.com/v2/cities?state=Utah&country=USA&key={API_KEY}"
   response = requests.get(URL)
   print(response.json())
 
@@ -61,9 +61,9 @@ if __name__ == '__main__':
 #         pollution (Object) – Air quality data.
 #             ts (String, Timestamp) – Timestamp of the data (e.g., "2025-03-05T14:00:00.000Z").
 #             aqius (Integer) – Air Quality Index (AQI) for the USA (e.g., 48).
-#             mainus (String) – Main pollutant in the USA (e.g., "p2").
+#             mainus (String) – Main pollutant in the USA (e.g., "p2"). PM2.5 - Fine particles like smoke, haze, combustion fumes
 #             aqicn (Integer) – AQI for China (e.g., 25).
-#             maincn (String) – Main pollutant in China (e.g., "p1").
+#             maincn (String) – Main pollutant in China (e.g., "p1"). PM10 - Coarse particles like dust, pollen, mold
 #         weather (Object) – Weather conditions.
 #             ts (String, Timestamp) – Timestamp of the data.
 #             tp (Integer, °C) – Temperature in Celsius (e.g., 10).

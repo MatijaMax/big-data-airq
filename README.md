@@ -31,7 +31,7 @@
 The goal of this project is to analyze air quality data using two processing modes:
 - **Batch Processing:** Historical air quality data from USA is used. (A total of **10 queries** are performed)
   [USA Air Pollution Dataset](https://www.kaggle.com/datasets/mexwell/us-air-pollution)
-- **Streaming Processing:**  Real-time sensor data from USA is used. (A total of **5 queries** are performed)
+- **Streaming Processing:**  Real-time pollution and weather sensor data from USA [California, Texas, Illinois, Pennsylvania, Utah] is used. (A total of **5 queries** are performed)
   [AirVisual API](https://api-docs.iqair.com/#get-started)
 
 ## Cleaned Data Structure

@@ -213,42 +213,44 @@ services:
     networks:
       - airq_network   
 
-  # data-generator:
-  #   build:
-  #     context: .
-  #     dockerfile: ./data-generator/Dockerfile
-  #   container_name: data-generator
-  #   volumes:
-  #     - ./producer_data:/producer_data
-  #   networks:
-  #     - airq_network
+  data-generator:
+    build:
+      context: .
+      dockerfile: ./data-generator/Dockerfile
+    container_name: data-generator
+    volumes:
+      - ./producer_data:/producer_data
+    depends_on:
+      - kafka
+    networks:
+      - airq_network
 
-  # zookeeper:
-  #   image: zookeeper:3.8
-  #   container_name: zookeeper
-  #   restart: always
-  #   env_file:
-  #     - ./kafka/zookeeper.env
-  #   ports:
-  #     - "2181:2181"
-  #   networks:
-  #     - airq_network
+  zookeeper:
+    image: zookeeper:3.8
+    container_name: zookeeper
+    restart: always
+    env_file:
+      - ./kafka/zookeeper.env
+    ports:
+      - "2181:2181"
+    networks:
+      - airq_network
 
-  # kafka:
-  #   image: wurstmeister/kafka:latest
-  #   container_name: kafka
-  #   env_file:
-  #     - ./kafka/kafka.env
-  #   ports:
-  #     - "9092:9092"
-  #     - "9093:9093"
-  #   depends_on:
-  #     - zookeeper
-  #   volumes:
-  #     - kafka_data:/var/lib/kafka/data
-  #   networks:
-  #     - airq_network
-
+  kafka:
+    image: wurstmeister/kafka:latest
+    container_name: kafka
+    env_file:
+      - ./kafka/kafka.env
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    depends_on:
+      - zookeeper
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    networks:
+      - airq_network
+  
 volumes:
   mongodb_data: {}
   hadoop_namenode: {}
@@ -262,8 +264,8 @@ volumes:
   nifi_state: {}
   nifi_registry: {}
   postgres_data: {}
-  # zookeeper_data: {}
-  # kafka_data: {}  
+  zookeeper_data: {}
+  kafka_data: {}  
 
 
 networks:

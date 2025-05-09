@@ -3,8 +3,20 @@ import os
 import time
 import requests
 from kafka import KafkaProducer
+from kafka.errors import NoBrokersAvailable
 from dotenv import load_dotenv
 import json
+
+def wait_for_kafka(bs='kafka:9092', timeout=60):
+    start = time.time()
+    while True:
+        try:
+            KafkaProducer(bootstrap_servers=bs)
+            print("✅ Kafka is ready")
+            return
+        except NoBrokersAvailable:
+            print("⏳ Waiting for Kafka...")
+            time.sleep(3)
 
 def fetch_air_quality_data(location):
     load_dotenv()
@@ -17,7 +29,7 @@ def fetch_air_quality_data(location):
     return response.json()
 
 def main():
-
+    print("START PRODUCER")
     locations = [
         # CALIFORNIA
         {"city": "Los Angeles", "state": "California", "country": "USA"},
@@ -76,6 +88,8 @@ def main():
         {"city": "Farmington", "state": "Utah", "country": "USA"}       
     ]
 
+    wait_for_kafka("kafka:9092")
+
     producer = KafkaProducer(
         bootstrap_servers="kafka:9092",
         value_serializer=lambda v: json.dumps(v).encode("utf-8")
@@ -87,7 +101,12 @@ def main():
             producer.send("airq", value=data)
             print(f"Sent data for {location['city']}: {data}")
             #time.sleep(10)  # Fetch next city data after 10 seconds
-            time.sleep(5)  # Fetch next city data after 5 seconds
+            time.sleep(15)  # Fetch next city data after 15 seconds
             #time.sleep(1)  # Fetch next city data after 1 second
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"❌ Script crashed with exception: {e}")
+    finally:
+        print("⚠️ Producer script has exited")

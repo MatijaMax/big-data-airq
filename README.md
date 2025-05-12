@@ -48,10 +48,11 @@ The goal of this project is to analyze air quality data using two processing mod
 
 ### Streaming Data:
 
-- **TODO:**
-  - `1`
-  - `2`
-
+- **Location, Timestamp and Readings:**
+  - `State, City, Timestamp`
+  - `Aqi, Pollutant (P10 or P2.5)`
+  - `Temperature (°C), Air Pressure (hPa), Humidity (%), Wind Speed (m/s), Wind Direction (°)`
+                 
 ## Technologies
 
 - **Docker**: Containerization platform used for deploying and running the application.  
@@ -65,7 +66,7 @@ The goal of this project is to analyze air quality data using two processing mod
 - **Metabase**: Open-source business intelligence tool used for visualizing and analyzing data.
 
 ## System Architecture
-
+![System Architecture](diagram.png)
 ## Queries
 
 **BATCH:**

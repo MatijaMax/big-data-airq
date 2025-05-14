@@ -28,6 +28,8 @@ raw_df = spark.readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka:9092") \
     .option("subscribe", "cleaned_airq") \
+    .option("startingOffsets", "latest") \
+    .option("failOnDataLoss", "false") \
     .load()
 
 # Parse data
@@ -36,14 +38,15 @@ parsed_df = raw_df.selectExpr("CAST(value AS STRING) as json_str") \
     .select("data.*")
 
 aqi_spikes_df = parsed_df \
-    .filter(col("aqi") > 50)
+    .filter(col("aqi") > 10)
 
 # Write to MongoDB
-query = aqi_spikes_df.writeStream \
-    .format("mongodb") \
-    .option("checkpointLocation", "/home/checkpoints/aqi_spikes/s1") \
-    .option("spark.mongodb.connection.uri", "mongodb://mongodb:27017/airq.s1") \
-    .outputMode("append") \
-    .start()
-
+query = (
+    aqi_spikes_df.writeStream 
+        .format("mongodb") 
+        .option("checkpointLocation", "/home/checkpoints/aqi_spikes/s1") 
+        .option("spark.mongodb.connection.uri", "mongodb://mongodb:27017/airq.s1") 
+        .outputMode("append") 
+        .start()
+)
 query.awaitTermination()

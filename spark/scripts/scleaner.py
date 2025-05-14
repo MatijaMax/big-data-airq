@@ -49,7 +49,8 @@ raw = (
       .format("kafka")
       .option("kafka.bootstrap.servers", "kafka:9092")
       .option("subscribe", "airq")
-      .option("startingOffsets", "earliest")
+      .option("startingOffsets", "latest")
+      .option("failOnDataLoss", "false")      
       .load()
 )
 
@@ -83,6 +84,7 @@ query = (
         .option("checkpointLocation", "/home/checkpoints/cleaned_airq/sc")
         .option("kafka.bootstrap.servers", "kafka:9092")
         .option("topic", "cleaned_airq")
+        .option("failOnDataLoss", "false")        
         .start()
 )
 

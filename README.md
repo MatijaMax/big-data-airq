@@ -85,10 +85,10 @@ The goal of this project is to analyze air quality data using two processing mod
 **STREAM:**
 
 1. Detect sudden AQI spikes.
-2. //TODO
-3. //TODO
-4. //TODO
-5. //TODO
+2. Make high temperature alert.
+3. Detect low humidity.
+4. Detect strong wind events.
+5. Get AQI windowed average.
 
 ## 📝 BONUS: A Paper on CRDTs
 For a detailed exploration of Conflict-Free Replicated Data Types (CRDTs), refer to the seminar paper inside this repository. This paper discusses the theoretical foundations and practical applications of CRDTs, highlighting their significance in distributed systems, ensuring consistency without the need for synchronization.

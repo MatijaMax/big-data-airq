@@ -50,7 +50,7 @@ The goal of this project is to analyze air quality data using two processing mod
 
 - **Location, Timestamp and Readings:**
   - `State, City, Timestamp`
-  - `Aqi, Pollutant (P10 or P2.5)`
+  - `AQI, Pollutant (P10 or P2.5)`
   - `Temperature (°C), Air Pressure (hPa), Humidity (%), Wind Speed (m/s), Wind Direction (°)`
                  
 ## Technologies
@@ -84,7 +84,7 @@ The goal of this project is to analyze air quality data using two processing mod
 
 **STREAM:**
 
-1. //TODO
+1. Detect sudden AQI spikes.
 2. //TODO
 3. //TODO
 4. //TODO

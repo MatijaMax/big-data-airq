@@ -97,6 +97,7 @@ services:
       - ./spark/spark.env
     volumes: 
       - ./spark/scripts:/home/scripts
+      - ./spark/checkpoints:/home/checkpoints  
     networks:
       - airq_network
       

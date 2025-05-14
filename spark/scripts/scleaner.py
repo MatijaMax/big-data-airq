@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col, to_json, struct
+from pyspark.sql.functions import from_json, col, to_json, struct, lit
 from pyspark.sql.types import (
     StructType, StructField, StringType, IntegerType, DoubleType, 
     ArrayType, TimestampType
@@ -57,8 +57,8 @@ parsed = (
     raw.selectExpr("CAST(value AS STRING) as json_str")
        .select(from_json(col("json_str"), schema).alias("json"))
        .select(
+           col("json.data.city").alias("city"),           
            col("json.data.state").alias("state"),           
-           col("json.data.city").alias("city"),
            col("json.data.current.pollution.ts").alias("timestamp"),
            col("json.data.current.pollution.aqius").alias("aqi"),
            col("json.data.current.pollution.mainus").alias("pollutant"), # PM1O AND PM2.5
@@ -70,7 +70,7 @@ parsed = (
         )
 )
 
-output = parsed.selectExpr("CAST(NULL AS STRING) AS key") \
+output = parsed.withColumn("key", lit(None).cast(StringType())) \
                   .withColumn("value", to_json(struct(
                       "city", "state", "timestamp", "aqi", "pollutant",
                       "temperature", "air_pressure", "humidity",
@@ -80,6 +80,7 @@ output = parsed.selectExpr("CAST(NULL AS STRING) AS key") \
 query = (
     output.writeStream
         .format("kafka")
+        .option("checkpointLocation", "/home/checkpoints/cleaned_airq/sc")
         .option("kafka.bootstrap.servers", "kafka:9092")
         .option("topic", "cleaned_airq")
         .start()

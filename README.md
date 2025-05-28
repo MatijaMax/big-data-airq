@@ -11,7 +11,7 @@
 
   <img src="https://static-00.iconduck.com/assets.00/hadoop-icon-2048x1535-hnz0inkl.png" alt="hdfs" width="60" height="40"> 
 
-  <img src="https://gitlab.com/uploads/-/system/project/avatar/61199454/apache-airflow.png" alt="airflow" width="45" height="45"> 
+  <img src="https://cdn.prod.website-files.com/627fe3133bae75e7bfbb9b2a/66c6c9ec336d4457d421d5ca_apache-airflow.png" alt="airflow" width="45" height="45"> 
 
   <img src="https://blog.mayadata.io/hs-fs/hubfs/123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png?width=300&name=123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png" alt="kafka" width="35" height="35">  
 

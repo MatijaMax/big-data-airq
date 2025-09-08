@@ -1,28 +1,4 @@
 # Big Data Engineering - Air Quality Analysis 2025
-<div style="display: flex; justify-content: center; align-items: center;">
-  
-  <img src="https://raw.githubusercontent.com/MatijaMax/big-data-airq/main/images/docker.png" alt="docker" width="40" height="40">
-
-  <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175138.png" alt="mongo" width="45" height="45">       
-
-  <img src="https://images.icon-icons.com/112/PNG/512/python_18894.png" alt="python" width="40" height="40">  
-
-  <img src="https://www.svgrepo.com/show/354063/metabase.svg" alt="metabase" width="40" height="40">  
-
-  <img src="https://static-00.iconduck.com/assets.00/hadoop-icon-2048x1535-hnz0inkl.png" alt="hdfs" width="60" height="40"> 
-
-  <img src="https://cdn.prod.website-files.com/627fe3133bae75e7bfbb9b2a/66c6c9ec336d4457d421d5ca_apache-airflow.png" alt="airflow" width="45" height="45"> 
-
-  <img src="https://blog.mayadata.io/hs-fs/hubfs/123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png?width=300&name=123%20-%20Use%20OpenEBS%20Underneath%20your%20Kafka%20Brokers.png" alt="kafka" width="35" height="35">  
-
-  <img src="https://images.icon-icons.com/2699/PNG/512/apache_nifi_logo_icon_167863.png" alt="nifi" width="70" height="40">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png" alt="spark" width="70" height="40">    
-
-</div>
-<br>
-
-## About the Project
 
 **Course:** Architectures and Systems for Big Data  
 **Student:** Matija Maksimović  

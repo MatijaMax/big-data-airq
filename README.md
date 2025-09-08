@@ -1,7 +1,7 @@
 # Big Data Engineering - Air Quality Analysis 2025
 <div style="display: flex; justify-content: center; align-items: center;">
   
-  <img src="https://www.splitbrain.org/_media/blog/2024-09/docker.svg?w=200&h=200&tok=e8bc2b" alt="docker" width="40" height="40">
+  <img src="images/docker.png" alt="docker" width="40" height="40">
 
   <img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175138.png" alt="mongo" width="45" height="45">       
 
